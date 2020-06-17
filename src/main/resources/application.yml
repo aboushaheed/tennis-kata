@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        output:
+          destination: "${KAFKA_TOPIC}"
+          group: "${KAFKA_GROUP}"
+        input:
+          destination: "${KAFKA_TOPIC}"
+          group: "${KAFKA_GROUP}"
+      kafka:
+        binder:
+          brokers: "${KAFKA_HOST}"
+  profiles:
+    active: dev
